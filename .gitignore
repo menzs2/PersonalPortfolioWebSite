@@ -1,0 +1,48 @@
+# Ignore build output directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# Dependency directories
+node_modules/
+packages/
+
+# Publish output
+publish/
+out/
+
+# Configuration files
+appsettings.Development.json
+appsettings.Local.json
+
+# IDE-specific files
+.idea/
+.vs/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Other
+*.bak
+*.swp
+*.orig
+*.rej
