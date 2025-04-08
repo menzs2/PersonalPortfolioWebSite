@@ -1,6 +1,6 @@
-﻿namespace PersonalPortfolioWebSite;
+﻿namespace PersonalPortfolioWebSite.Models;
 
-public class Skill
+public class SkillModel
 {
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;

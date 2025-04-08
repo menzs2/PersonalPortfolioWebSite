@@ -1,5 +1,23 @@
-﻿<h3>Project</h3>
-
+﻿@using PersonalPortfolioWebSite.Models
+<div class="project-card">
+    <h3>@project.Name</h3>
+    <p>@project.Description</p>
+    @if (project.Technologies != null && project.Technologies.Count > 0)
+    {
+        <ul>
+            @foreach (var technology in project.Technologies)
+            {
+                <li>@technology.Name</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No technologies listed.</p>
+    }
+ </div>  
+    
 @code {
-
+    [Parameter]
+    public ProjectModel project { get; set; } = new ProjectModel();
 }

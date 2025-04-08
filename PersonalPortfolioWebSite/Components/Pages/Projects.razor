@@ -1,7 +1,58 @@
 ﻿@page "/projects"
+@using PersonalPortfolioWebSite.Models
+@using PersonalPortfolioWebSite.Components.CustomComponents
 
 <h3>Projects</h3>
 
+@if (projects != null && projects.Count > 0)
+{
+    <div class="project-list">
+        @foreach (var project in projects)
+        {
+            <Project project="@project" />
+        }
+    </div>
+}
+else
+{
+    <p>No projects available.</p>
+}
+
 @code {
+    private List<ProjectModel> projects = new List<ProjectModel>
+    {
+        new ProjectModel
+        {
+            Name = "Project 1",
+            Description = "Description of Project 1",
+            Technologies = new List<SkillModel>{
+                new SkillModel { Name = "C#", Description = "C# programming language" },
+                new SkillModel { Name = "ASP.NET Core", Description = "Web framework for .NET" },
+                new SkillModel { Name = "Entity Framework Core", Description = "ORM for .NET" }
+            }
+        },
+        new ProjectModel
+            {
+                Name = "Project 2",
+                Description = "Description of Project 2",
+                Technologies = new List<SkillModel>{
+                    new SkillModel { Name = "JavaScript", Description = "JavaScript programming language" },
+                    new SkillModel { Name = "React", Description = "JavaScript library for building user interfaces" },
+                    new SkillModel { Name = "Node.js", Description = "JavaScript runtime built on Chrome's V8 JavaScript engine" }
+                }
+            },  
+        new ProjectModel
+        {
+            Name = "Project 3",
+            Description = "Description of Project 3",
+            Technologies = new List<SkillModel>{
+                new SkillModel { Name = "Python", Description = "Python programming language" },
+                new SkillModel { Name = "Django", Description = "Web framework for Python" },
+                new SkillModel  { Name = "PostgreSQL", Description = "Relational database management system" }
+            
+         }
+        }
+};
 
 }
+
