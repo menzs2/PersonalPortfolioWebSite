@@ -8,7 +8,9 @@
         <ul>
             @foreach (var technology in project.Technologies)
             {
-                <li>@technology.Name</li>
+                <li>
+                    <Skill SkillModel="@technology" />
+                </li>
             }
         </ul>
     }
@@ -20,5 +22,7 @@
     
 @code {
     [Parameter]
-    public ProjectModel project { get; set; } = new ProjectModel();
+    public ProjectModel project { get; set; } = new ProjectModel(){
+        Name = "Default Project"
+    };
 }
