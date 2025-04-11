@@ -1,6 +1,6 @@
 ﻿@using PersonalPortfolioWebSite.Models
 
-<div class="project-card">
+<article class="project-card">
     <h3>@project.Name</h3>
     <p>@project.Description</p>
     @if (project.Technologies != null && project.Technologies.Count > 0)
@@ -18,7 +18,7 @@
     {
         <p>No technologies listed.</p>
     }
- </div>  
+</article>  
     
 @code {
     [Parameter]

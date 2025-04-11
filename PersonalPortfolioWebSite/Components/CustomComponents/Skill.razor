@@ -1,11 +1,11 @@
 ﻿@using PersonalPortfolioWebSite.Models;
 
-<div class="skill-card">
+<article class="skill-card">
     <h3>@SkillModel.Name</h3>
     <p>@SkillModel.Description</p>
     <p>Level: @SkillModel.Level /10</p>
     <p>Experience: @SkillModel.YearsOfExperience</p>
-</div>
+</article>
 @code {
     [Parameter]
     public SkillModel SkillModel { get; set; } = new SkillModel();
