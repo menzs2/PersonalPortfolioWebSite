@@ -8,11 +8,12 @@
         <p>@project.Description</p>
         @if (project.Technologies != null && project.Technologies.Count > 0)
         {
+            <h4>Verwendete Skills:</h4>
             <ul>
                 @foreach (var technology in project.Technologies)
                 {
                     <li>
-                        <Skill SkillModel="@technology" />
+                        <Skill SkillModel="@technology" IsCollapsed="true" />
                     </li>
                 }
             </ul>

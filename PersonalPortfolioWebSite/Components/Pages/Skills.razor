@@ -5,14 +5,11 @@
 
 <h3>Skills</h3>
 <p>Hier sind meine Skills aufgelistet:</p>
-<ul>
+
 @foreach (var skill in SkillsList)
 {
-    <li>
         <Skill SkillModel="@skill" IsCollapsed="false" />
-    </li>
 }
-</ul>
 @code {
     private List<SkillModel> SkillsList { get; set; } = new List<SkillModel>()
     {
