@@ -1,7 +1,48 @@
 ﻿@page "/career"
+@using PersonalPortfolioWebSite.Models
+@using PersonalPortfolioWebSite.Components.CustomComponents
+
 <PageTitle>Career</PageTitle>
 <h3>Lebenslauf</h3>
-
+@if (workExperiences != null && workExperiences.Count > 0)
+{
+    <div class="work-experience-list">
+        @foreach (var workExperience in workExperiences)
+        {
+            <WorkExperience WorkExperienceModel="@workExperience" />
+        }
+    </div>
+}
+else
+{
+    <p>Keine Berufserfahrung verfügbar.</p>
+}
 @code {
-
+    private List<WorkExperienceModel> workExperiences = new List<WorkExperienceModel>
+    {
+        new WorkExperienceModel
+        {
+            CompanyName = "Beispiel GmbH",
+            StartDate = new DateTime(2020, 1, 1),
+            EndDate = new DateTime(2022, 12, 31),
+            Description = "Entwicklung von Webanwendungen mit C# und Blazor.",
+            Technologies = new List<SkillModel>
+            {
+                new SkillModel { Name = "C#", Level = 8 },
+                new SkillModel { Name = "Blazor", Level = 7 }
+            }
+        },
+        new WorkExperienceModel
+        {
+            CompanyName = "Muster AG",
+            StartDate = new DateTime(2018, 6, 1),
+            EndDate = new DateTime(2019, 12, 31),
+            Description = "Unterstützung bei der Entwicklung von Softwarelösungen.",
+            Technologies = new List<SkillModel>
+            {
+                new SkillModel { Name = "JavaScript", Level = 6 },
+                new SkillModel { Name = "SQL", Level = 7 }
+            }
+        }
+    };
 }

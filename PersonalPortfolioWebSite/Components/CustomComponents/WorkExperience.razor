@@ -1,5 +1,8 @@
-﻿<h3>WorkExperience</h3>
+﻿
+@using PersonalPortfolioWebSite.Models;
+
+<p>@WorkExperienceModel.StartDate</p>
 
 @code {
-
+    [Parameter] public WorkExperienceModel WorkExperienceModel { get; set; } = new WorkExperienceModel(); // Default value to avoid null reference issues
 }
