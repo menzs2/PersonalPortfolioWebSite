@@ -1,6 +1,8 @@
 ﻿@page "/projects"
 @using PersonalPortfolioWebSite.Models
 @using PersonalPortfolioWebSite.Services
+@using PersonalPortfolioWebSite.Components
+@using PersonalPortfolioWebSite.Components.CustomComponents
 @inject ProjectService projectService;
 
 <h3>Projekte</h3>
@@ -20,7 +22,7 @@ else
 }
 
 @code {
-    private List<ProjectModel> projects { get; set; } = new List<ProjectModel>();
+    private List<ProjectModel> projects { get; set; }
 
     protected override void OnInitialized()
     {

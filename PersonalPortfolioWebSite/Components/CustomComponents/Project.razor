@@ -1,28 +1,34 @@
-﻿@using PersonalPortfolioWebSite.Models
+﻿@using PersonalPortfolioWebSite.Models;
+
 
 <article class="project-card">
-    <h3>@project.Name</h3>
-    <p>@project.Description</p>
-    @if (project.Technologies != null && project.Technologies.Count > 0)
+    @if (project != null)
     {
-        <ul>
-            @foreach (var technology in project.Technologies)
-            {
-                <li>
-                    <Skill SkillModel="@technology" />
-                </li>
-            }
-        </ul>
+        <h3>@project.Name</h3>
+        <p>@project.Description</p>
+        @if (project.Technologies != null && project.Technologies.Count > 0)
+        {
+            <ul>
+                @foreach (var technology in project.Technologies)
+                {
+                    <li>
+                        <Skill SkillModel="@technology" />
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No technologies listed.</p>
+        }
     }
     else
     {
-        <p>No technologies listed.</p>
+        <p>Project data is not available.</p>
     }
 </article>  
     
 @code {
     [Parameter]
-    public ProjectModel project { get; set; } = new ProjectModel(){
-        Name = "Default Project"
-    };
+    public ProjectModel project { get; set; }
 }

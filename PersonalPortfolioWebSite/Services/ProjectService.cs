@@ -16,7 +16,7 @@ namespace PersonalPortfolioWebSite.Services
         {
             _projects.Add(new ProjectModel
             {
-                Name = "EasyCap",
+                Name = "BauBit PRO",
                 Description = "Description of Project 1",
                 Technologies = new List<SkillModel>
                 {

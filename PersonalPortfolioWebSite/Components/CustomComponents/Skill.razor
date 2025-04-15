@@ -1,12 +1,27 @@
 ﻿@using PersonalPortfolioWebSite.Models;
 
 <article class="skill-card">
-    <h3>@SkillModel.Name</h3>
-    <p>@SkillModel.Description</p>
-    <p>Level: @SkillModel.Level /10</p>
-    <p>Experience: @SkillModel.YearsOfExperience</p>
+    @if(SkillModel == null)
+    {
+        <p>Skill data is not available.</p>
+    }
+    else if (IsCollapsed)
+    {
+        <p>@SkillModel.Name</p>
+        <p>Level: @SkillModel.Level /10</p>
+    }
+    else
+    {
+        <h4>@SkillModel.Name</h4>
+        <p>@SkillModel.Description</p>
+        <p>Level: @SkillModel.Level /10</p>
+        <p>Experience: @SkillModel.YearsOfExperience</p>
+    }
 </article>
 @code {
+    [Parameter]
+    public bool IsCollapsed { get; set; } = true;
+
     [Parameter]
     public SkillModel SkillModel { get; set; } = new SkillModel();
 }
