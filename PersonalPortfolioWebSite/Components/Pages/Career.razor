@@ -18,31 +18,36 @@ else
     <p>Keine Berufserfahrung verfügbar.</p>
 }
 @code {
-    private List<WorkExperienceModel> workExperiences = new List<WorkExperienceModel>
+    private List<WorkExperienceModel> workExperiences { get; set; } = new List<WorkExperienceModel>();
+
+
+    protected override void OnInitialized()
     {
-        new WorkExperienceModel
-        {
-            CompanyName = "Beispiel GmbH",
-            StartDate = new DateTime(2020, 1, 1),
-            EndDate = new DateTime(2022, 12, 31),
-            Description = "Entwicklung von Webanwendungen mit C# und Blazor.",
-            Technologies = new List<SkillModel>
-            {
-                new SkillModel { Name = "C#", Level = 8 },
-                new SkillModel { Name = "Blazor", Level = 7 }
-            }
-        },
-        new WorkExperienceModel
-        {
-            CompanyName = "Muster AG",
-            StartDate = new DateTime(2018, 6, 1),
-            EndDate = new DateTime(2019, 12, 31),
-            Description = "Unterstützung bei der Entwicklung von Softwarelösungen.",
-            Technologies = new List<SkillModel>
-            {
-                new SkillModel { Name = "JavaScript", Level = 6 },
-                new SkillModel { Name = "SQL", Level = 7 }
-            }
-        }
-    };
+        workExperiences = new List<WorkExperienceModel>
+{
+new WorkExperienceModel
+{
+CompanyName = "ABBF Bausoft AG",
+StartDate = new DateTime(2015, 1, 1),
+EndDate = new DateTime(2025, 1, 31),
+Description = "Entwicklung von Webanwendungen mit C# und Blazor.",
+Technologies = new List<SkillModel>
+{
+new SkillModel { Name = "C#", Level = 8 },
+new SkillModel { Name = "Blazor", Level = 7 }
+}
+},
+new WorkExperienceModel
+{
+CompanyName = "ABBF Bausoft AG",
+StartDate = new DateTime(2012, 3, 1),
+EndDate = new DateTime(2014, 12, 31),
+Description = "Support BauBit PRO 1st/2nd Level.",
+Technologies = new List<SkillModel>
+{
+new SkillModel { Name = "SQL", Level = 7 }
+}
+}
+};
+    }
 }

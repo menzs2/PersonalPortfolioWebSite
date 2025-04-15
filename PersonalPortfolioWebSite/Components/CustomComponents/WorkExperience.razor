@@ -1,7 +1,9 @@
 ﻿
 @using PersonalPortfolioWebSite.Models;
 
-<p>@WorkExperienceModel.StartDate</p>
+<p>@WorkExperienceModel.StartDate.ToString("MM/yyyy") - @WorkExperienceModel.EndDate.ToString("MM/yyyy")</p>
+<p>@WorkExperienceModel.JobTitle</p>
+<p>@WorkExperienceModel.CompanyName</p> 
 
 @code {
     [Parameter] public WorkExperienceModel WorkExperienceModel { get; set; } = new WorkExperienceModel(); // Default value to avoid null reference issues
