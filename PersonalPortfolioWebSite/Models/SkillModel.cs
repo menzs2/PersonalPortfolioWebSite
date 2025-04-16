@@ -14,5 +14,6 @@ public class SkillModel
     public int Level { get; set; } = 1;
 
     public string Category { get; set; } = string.Empty;
+    [Range(0, 30, ErrorMessage = "Years of experience must be between 0 and 30.")]
     public int YearsOfExperience { get; set; } = 1;
 }
