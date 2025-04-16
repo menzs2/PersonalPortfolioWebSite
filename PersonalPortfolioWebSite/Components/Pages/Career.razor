@@ -1,6 +1,7 @@
 ﻿@page "/career"
 @using PersonalPortfolioWebSite.Models
 @using PersonalPortfolioWebSite.Components.CustomComponents
+@using Microsoft.AspNetCore.Components
 
 <PageTitle>Career</PageTitle>
 <h3>Lebenslauf</h3>
@@ -30,11 +31,12 @@ new WorkExperienceModel
 CompanyName = "ABBF Bausoft AG",
 StartDate = new DateTime(2015, 1, 1),
 EndDate = new DateTime(2025, 1, 31),
-Description = "Entwicklung von Webanwendungen mit C# und Blazor.",
+Description = "Entwicklung von Anwendungen mit  C# und SQL Server.",
 Technologies = new List<SkillModel>
 {
 new SkillModel { Name = "C#", Level = 8 },
-new SkillModel { Name = "Blazor", Level = 7 }
+new SkillModel { Name = "SQL Server", Level = 7 },
+new SkillModel { Name = "Dapper ORM", Level = 7 },
 }
 },
 new WorkExperienceModel

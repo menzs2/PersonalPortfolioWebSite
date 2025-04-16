@@ -4,7 +4,7 @@
     <p>@WorkExperienceModel.StartDate.ToString("MM/yyyy") - @WorkExperienceModel.EndDate.ToString("MM/yyyy")</p>
     <p>@WorkExperienceModel.CompanyName</p>
     <p>@WorkExperienceModel.JobTitle</p>
-    <p>@WorkExperienceModel.Description</p>
+    <p>@((MarkupString)WorkExperienceModel.Description)</p>
     <ul class="technologies-list">
         @foreach (var technology in WorkExperienceModel.Technologies)
         {

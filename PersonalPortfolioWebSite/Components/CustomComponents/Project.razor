@@ -5,7 +5,7 @@
     @if (project != null)
     {
         <h3>@project.Name</h3>
-        <p>@project.Description</p>
+        <div>@((MarkupString)project.Description)</div>
         @if (project.Technologies != null && project.Technologies.Count > 0)
         {
             <h4>Verwendete Skills:</h4>
