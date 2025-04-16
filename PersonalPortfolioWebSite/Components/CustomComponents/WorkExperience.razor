@@ -1,10 +1,19 @@
-﻿
-@using PersonalPortfolioWebSite.Models;
+﻿@using PersonalPortfolioWebSite.Models;
 
-<p>@WorkExperienceModel.StartDate.ToString("MM/yyyy") - @WorkExperienceModel.EndDate.ToString("MM/yyyy")</p>
-<p>@WorkExperienceModel.JobTitle</p>
-<p>@WorkExperienceModel.CompanyName</p> 
+<article class="work-experience">
+    <p>@WorkExperienceModel.StartDate.ToString("MM/yyyy") - @WorkExperienceModel.EndDate.ToString("MM/yyyy")</p>
+    <p>@WorkExperienceModel.CompanyName</p>
+    <p>@WorkExperienceModel.JobTitle</p>
+    <p>@WorkExperienceModel.Description</p>
+    <ul class="technologies-list">
+        @foreach (var technology in WorkExperienceModel.Technologies)
+        {
+            <li>@technology.Name - Level: @technology.Level</li>
+        }
+    </ul>
+</article>
 
 @code {
-    [Parameter] public WorkExperienceModel WorkExperienceModel { get; set; } = new WorkExperienceModel(); // Default value to avoid null reference issues
+    [Parameter] public WorkExperienceModel WorkExperienceModel { get; set; } = new WorkExperienceModel(); // Default value
+    
 }
