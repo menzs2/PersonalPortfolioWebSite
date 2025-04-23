@@ -71,4 +71,19 @@ h1:focus {
 #stephan-menzi >img {
     width: 100%;
     height: auto;
+    border: #1861ac solid 1px;
+    border-radius: 5px;
+}
+
+.work-experience,
+.skill-card-full,
+.project-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: #1861ac solid 1px;
+    border-radius: 5px;
 }

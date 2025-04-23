@@ -1,6 +1,6 @@
 ﻿@using PersonalPortfolioWebSite.Models;
 
-<article class="skill-card">
+<article class="skill-card @((!IsCollapsed ? "skill-card-full" : ""))">
     @if(SkillModel == null)
     {
         <p>Skill data is not available.</p>
